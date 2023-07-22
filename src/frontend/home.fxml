@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="homePage" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #394867;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
+   <children>
+      <Label layoutX="53.0" layoutY="43.0" prefHeight="30.0" prefWidth="176.0" text="Hello There," textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="loggedUserName" layoutX="229.0" layoutY="43.0" text="user.name" textFill="#9ba4b5">
+         <font>
+            <Font name="SansSerif Bold" size="24.0" />
+         </font>
+      </Label>
+      <TabPane layoutX="75.0" layoutY="121.0" prefHeight="359.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Contacts List">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #9BA4B5;">
+                     <children>
+                        <ScrollPane fx:id="userContactsScrollpane" prefHeight="328.0" prefWidth="750.0">
+                           <content>
+                              <VBox fx:id="LayoutOfUserContacts" prefHeight="328.0" prefWidth="738.0" style="-fx-background-color: #ffffff;" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="Find a contact">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #9BA4B5;">
+                     <children>
+                        <ScrollPane fx:id="allUsersScrollpane" prefHeight="328.0" prefWidth="750.0">
+                           <content>
+                              <VBox fx:id="layoutOfAllUsers" prefHeight="328.0" prefWidth="738.0" style="-fx-background-color: #ffffff;" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Messages Request">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #9BA4B5;">
+                     <children>
+                        <ScrollPane prefHeight="328.0" prefWidth="750.0">
+                           <content>
+                              <VBox fx:id="layoutOfAllMessageRequests" prefHeight="328.0" prefWidth="738.0" style="-fx-background-color: #ffffff;" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Send to all">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <TextArea fx:id="messageTF" layoutX="125.0" layoutY="38.0" prefHeight="150.0" prefWidth="500.0" promptText="Type your message here">
+                           <font>
+                              <Font name="SansSerif Regular" size="16.0" />
+                           </font>
+                        </TextArea>
+                        <Button layoutX="300.0" layoutY="223.0" mnemonicParsing="false" onAction="#onSendBroadcastMessage" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #212A3E;" text="Send" textFill="WHITE">
+                           <font>
+                              <Font name="SansSerif Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
